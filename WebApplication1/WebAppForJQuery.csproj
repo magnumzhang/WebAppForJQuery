@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1E82577-5D8F-4A42-98AB-2A182ED4750B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication1</RootNamespace>
+    <AssemblyName>WebApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Calendar\CalendarDemo1.aspx" />
+    <Content Include="Calendar\css\bootstrap.min.css" />
+    <Content Include="Calendar\css\dcalendar.picker.css" />
+    <Content Include="Calendar\css\zzsc.css" />
+    <Content Include="Calendar\index.html" />
+    <Content Include="Calendar\js\dcalendar.picker.js" />
+    <Content Include="Calendar\js\jquery-1.11.0.min.js" />
+    <Content Include="Dynamic\CallServerMethod.js" />
+    <Content Include="Dynamic\JSonBuilder.js" />
+    <Content Include="Dynamic\PostJsonThenGetItChangeByJSonBuilder.aspx" />
+    <Content Include="Dynamic\StronglyTypedCallServerMethod.aspx" />
+    <Content Include="Dynamic\DynamicCreateControl.js" />
+    <Content Include="Dynamic\DynamicGetControlValue.js" />
+    <Content Include="Dynamic\DynamicPage.aspx" />
+    <Content Include="Dynamic\WeaklyTypedCallServerMethod.aspx" />
+    <Content Include="JQueryMobile\Event\PageInit.aspx" />
+    <Content Include="JQueryMobile\GetQueryString.aspx" />
+    <Content Include="JQueryMobile\UI\ReflowTable.aspx" />
+    <Content Include="JQueryMobile\UI\SearchByText.aspx" />
+    <Content Include="JQueryMobile\UI\SearchByValue.aspx" />
+    <Content Include="JQueryMobile\UI\SelectByCheckbox.aspx" />
+    <Content Include="JQueryMobile\UI\SelectByRadio.aspx" />
+    <Content Include="JQueryMobile\UI\TextInput.aspx" />
+    <Content Include="JQuery\CallFunGetArrayResult.aspx" />
+    <Content Include="JQueryMobile\UI\FirstPage.aspx" />
+    <Content Include="JQueryMobile\UI\FormBase.aspx" />
+    <Content Include="JQueryMobile\UI\MultiplePageInOneHTML.aspx" />
+    <Content Include="JQueryMobile\UI\PageAsDialog.aspx" />
+    <Content Include="JQueryMobile\UI\Page_Button.aspx" />
+    <Content Include="JQueryMobile\UI\Page_Popup.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WebForm2.aspx" />
+    <Content Include="WebForm3.aspx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="JQuery\CallFunWithoutPara.aspx" />
+    <Content Include="JQuery\CallFunWithPara.aspx" />
+    <Content Include="JQuery\GetJsonFromServer.aspx" />
+    <Content Include="JQuery\PostJsonThenGetItChange.aspx" />
+    <Content Include="JQuery\PostJsonToServer.aspx" />
+    <Content Include="EventDemo.aspx" />
+    <Content Include="EventDemo2.aspx" />
+    <Content Include="EventDemo3.aspx" />
+    <Content Include="EventDemo4.aspx" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calendar\CalendarDemo1.aspx.cs">
+      <DependentUpon>CalendarDemo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendar\CalendarDemo1.aspx.designer.cs">
+      <DependentUpon>CalendarDemo1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Dynamic\JSonUtility.cs" />
+    <Compile Include="Dynamic\PostJsonThenGetItChangeByJSonBuilder.aspx.cs">
+      <DependentUpon>PostJsonThenGetItChangeByJSonBuilder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dynamic\PostJsonThenGetItChangeByJSonBuilder.aspx.designer.cs">
+      <DependentUpon>PostJsonThenGetItChangeByJSonBuilder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic\StronglyTypedCallServerMethod.aspx.cs">
+      <DependentUpon>StronglyTypedCallServerMethod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic\StronglyTypedCallServerMethod.aspx.designer.cs">
+      <DependentUpon>StronglyTypedCallServerMethod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic\DynamicControl.cs" />
+    <Compile Include="Dynamic\DynamicPage.aspx.cs">
+      <DependentUpon>DynamicPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dynamic\DynamicPage.aspx.designer.cs">
+      <DependentUpon>DynamicPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dynamic\WeaklyTypedCallServerMethod.aspx.cs">
+      <DependentUpon>WeaklyTypedCallServerMethod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dynamic\WeaklyTypedCallServerMethod.aspx.designer.cs">
+      <DependentUpon>WeaklyTypedCallServerMethod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\Event\PageInit.aspx.cs">
+      <DependentUpon>PageInit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\Event\PageInit.aspx.designer.cs">
+      <DependentUpon>PageInit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\GetQueryString.aspx.cs">
+      <DependentUpon>GetQueryString.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\GetQueryString.aspx.designer.cs">
+      <DependentUpon>GetQueryString.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\ReflowTable.aspx.cs">
+      <DependentUpon>ReflowTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\ReflowTable.aspx.designer.cs">
+      <DependentUpon>ReflowTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SearchByText.aspx.cs">
+      <DependentUpon>SearchByText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SearchByText.aspx.designer.cs">
+      <DependentUpon>SearchByText.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SearchByValue.aspx.cs">
+      <DependentUpon>SearchByValue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SearchByValue.aspx.designer.cs">
+      <DependentUpon>SearchByValue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SelectByCheckbox.aspx.cs">
+      <DependentUpon>SelectByCheckbox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SelectByCheckbox.aspx.designer.cs">
+      <DependentUpon>SelectByCheckbox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SelectByRadio.aspx.cs">
+      <DependentUpon>SelectByRadio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\SelectByRadio.aspx.designer.cs">
+      <DependentUpon>SelectByRadio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\TextInput.aspx.cs">
+      <DependentUpon>TextInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\TextInput.aspx.designer.cs">
+      <DependentUpon>TextInput.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery\CallFunGetArrayResult.aspx.cs">
+      <DependentUpon>CallFunGetArrayResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQuery\CallFunGetArrayResult.aspx.designer.cs">
+      <DependentUpon>CallFunGetArrayResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery\CallFunWithoutPara.aspx.cs">
+      <DependentUpon>CallFunWithoutPara.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQuery\CallFunWithoutPara.aspx.designer.cs">
+      <DependentUpon>CallFunWithoutPara.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery\CallFunWithPara.aspx.cs">
+      <DependentUpon>CallFunWithPara.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQuery\CallFunWithPara.aspx.designer.cs">
+      <DependentUpon>CallFunWithPara.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery\GetJsonFromServer.aspx.cs">
+      <DependentUpon>GetJsonFromServer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQuery\GetJsonFromServer.aspx.designer.cs">
+      <DependentUpon>GetJsonFromServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery\PostJsonThenGetItChange.aspx.cs">
+      <DependentUpon>PostJsonThenGetItChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQuery\PostJsonThenGetItChange.aspx.designer.cs">
+      <DependentUpon>PostJsonThenGetItChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery\PostJsonToServer.aspx.cs">
+      <DependentUpon>PostJsonToServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQuery\PostJsonToServer.aspx.designer.cs">
+      <DependentUpon>PostJsonToServer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventDemo.aspx.cs">
+      <DependentUpon>EventDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventDemo.aspx.designer.cs">
+      <DependentUpon>EventDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventDemo2.aspx.cs">
+      <DependentUpon>EventDemo2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventDemo2.aspx.designer.cs">
+      <DependentUpon>EventDemo2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventDemo3.aspx.cs">
+      <DependentUpon>EventDemo3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventDemo3.aspx.designer.cs">
+      <DependentUpon>EventDemo3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EventDemo4.aspx.cs">
+      <DependentUpon>EventDemo4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EventDemo4.aspx.designer.cs">
+      <DependentUpon>EventDemo4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\FirstPage.aspx.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\FirstPage.aspx.designer.cs">
+      <DependentUpon>FirstPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\FormBase.aspx.cs">
+      <DependentUpon>FormBase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\FormBase.aspx.designer.cs">
+      <DependentUpon>FormBase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\MultiplePageInOneHTML.aspx.cs">
+      <DependentUpon>MultiplePageInOneHTML.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\MultiplePageInOneHTML.aspx.designer.cs">
+      <DependentUpon>MultiplePageInOneHTML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\PageAsDialog.aspx.cs">
+      <DependentUpon>PageAsDialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\PageAsDialog.aspx.designer.cs">
+      <DependentUpon>PageAsDialog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\Page_Button.aspx.cs">
+      <DependentUpon>Page_Button.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\Page_Button.aspx.designer.cs">
+      <DependentUpon>Page_Button.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\Page_Popup.aspx.cs">
+      <DependentUpon>Page_Popup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JQueryMobile\UI\Page_Popup.aspx.designer.cs">
+      <DependentUpon>Page_Popup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64483</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64483/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
